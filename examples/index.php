@@ -85,6 +85,11 @@ echo '<'.'?'.'xml version="1.0" encoding="UTF-8"'.'?'.'>';
 <li>Text stretching and spacing (tracking/kerning): [<a href="example_063.php" title="PDF [new window]" target="_blank">PDF</a>]</li>
 <li>No-write page regions: [<a href="example_064.php" title="PDF [new window]" target="_blank">PDF</a>]</li>
 <li>PDF/A-1b (ISO 19005-1:2005) document: [<a href="example_065.php" title="PDF [new window]" target="_blank">PDF</a>]</li>
+<<<<<<< HEAD
+=======
+<li>Using WriteHTMLCell: [<a href="example_066.php" title="PDF [new window]" target="_blank">PDF</a>]</li>
+<li>Shorthand border styles including !important: [<a href="example_067.php" title="PDF [new window]" target="_blank">PDF</a>]</li>
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 </ol>
 
 <h2>Barcodes</h2>

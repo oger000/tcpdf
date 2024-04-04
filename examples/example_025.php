@@ -22,6 +22,11 @@
  * @abstract TCPDF - Example: Object Transparency
  * @author Nicola Asuni
  * @since 2008-03-04
+<<<<<<< HEAD
+=======
+ * @group drawing
+ * @group pdf
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
  */
 
 // Include the main TCPDF library (search for installation path).
@@ -31,6 +36,7 @@ require_once('tcpdf_include.php');
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
+<<<<<<< HEAD
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Nicola Asuni');
 $pdf->SetTitle('TCPDF Example 025');
@@ -39,12 +45,23 @@ $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
 $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 025', PDF_HEADER_STRING);
+=======
+$pdf->setCreator(PDF_CREATOR);
+$pdf->setAuthor('Nicola Asuni');
+$pdf->setTitle('TCPDF Example 025');
+$pdf->setSubject('TCPDF Tutorial');
+$pdf->setKeywords('TCPDF, PDF, example, test, guide');
+
+// set default header data
+$pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 025', PDF_HEADER_STRING);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
+<<<<<<< HEAD
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
@@ -54,6 +71,17 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+=======
+$pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+// set margins
+$pdf->setMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+$pdf->setHeaderMargin(PDF_MARGIN_HEADER);
+$pdf->setFooterMargin(PDF_MARGIN_FOOTER);
+
+// set auto page breaks
+$pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -67,7 +95,11 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // set font
+<<<<<<< HEAD
 $pdf->SetFont('helvetica', '', 12);
+=======
+$pdf->setFont('helvetica', '', 12);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // add a page
 $pdf->AddPage();
@@ -82,6 +114,7 @@ $pdf->Write(0, $txt, '', 0, '', true, 0, false, false, 0);
  * images).
  */
 
+<<<<<<< HEAD
 $pdf->SetLineWidth(2);
 
 // draw opaque red square
@@ -100,13 +133,37 @@ $pdf->Rect(50, 60, 60, 60, 'DF');
 // draw blue square
 $pdf->SetFillColor(0, 0, 255);
 $pdf->SetDrawColor(0, 0, 127);
+=======
+$pdf->setLineWidth(2);
+
+// draw opaque red square
+$pdf->setFillColor(255, 0, 0);
+$pdf->setDrawColor(127, 0, 0);
+$pdf->Rect(30, 40, 60, 60, 'DF');
+
+// set alpha to semi-transparency
+$pdf->setAlpha(0.5);
+
+// draw green square
+$pdf->setFillColor(0, 255, 0);
+$pdf->setDrawColor(0, 127, 0);
+$pdf->Rect(50, 60, 60, 60, 'DF');
+
+// draw blue square
+$pdf->setFillColor(0, 0, 255);
+$pdf->setDrawColor(0, 0, 127);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 $pdf->Rect(70, 80, 60, 60, 'DF');
 
 // draw jpeg image
 $pdf->Image('images/image_demo.jpg', 90, 100, 60, 60, '', 'http://www.tcpdf.org', '', true, 72);
 
 // restore full opacity
+<<<<<<< HEAD
 $pdf->SetAlpha(1);
+=======
+$pdf->setAlpha(1);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // ---------------------------------------------------------
 

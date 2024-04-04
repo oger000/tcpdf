@@ -27,16 +27,30 @@
 // See LICENSE.TXT file for more information.
 // -------------------------------------------------------------------
 //
+<<<<<<< HEAD
 // Description : Example for tcpdf_barcodes_2d.php class
+=======
+// Description : Example for tcpdf_barcodes_1d.php class
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 //
 //============================================================+
 
 /**
  * @file
+<<<<<<< HEAD
  * Example for tcpdf_barcodes_2d.php class
  * @package com.tecnick.tcpdf
  * @author Nicola Asuni
  * @version 1.0.000
+=======
+ * Example for tcpdf_barcodes_1d.php class
+ * @package com.tecnick.tcpdf
+ * @author Nicola Asuni
+ * @version 1.0.000
+ * @group barcode
+ * @group 1d
+ * @group png
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
  */
 
 // include 1D barcode class (search for installation path)

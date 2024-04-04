@@ -22,6 +22,13 @@
  * @abstract TCPDF - Example: Two independent columns with WriteHTMLCell()
  * @author Nicola Asuni
  * @since 2008-03-04
+<<<<<<< HEAD
+=======
+ * @group column
+ * @group cell
+ * @group html
+ * @group pdf
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
  */
 
 // Include the main TCPDF library (search for installation path).
@@ -31,6 +38,7 @@ require_once('tcpdf_include.php');
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
+<<<<<<< HEAD
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Nicola Asuni');
 $pdf->SetTitle('TCPDF Example 007');
@@ -39,12 +47,23 @@ $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
 $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 007', PDF_HEADER_STRING);
+=======
+$pdf->setCreator(PDF_CREATOR);
+$pdf->setAuthor('Nicola Asuni');
+$pdf->setTitle('TCPDF Example 007');
+$pdf->setSubject('TCPDF Tutorial');
+$pdf->setKeywords('TCPDF, PDF, example, test, guide');
+
+// set default header data
+$pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 007', PDF_HEADER_STRING);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
+<<<<<<< HEAD
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
@@ -54,6 +73,17 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+=======
+$pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+// set margins
+$pdf->setMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+$pdf->setHeaderMargin(PDF_MARGIN_HEADER);
+$pdf->setFooterMargin(PDF_MARGIN_FOOTER);
+
+// set auto page breaks
+$pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -67,7 +97,11 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // set font
+<<<<<<< HEAD
 $pdf->SetFont('times', '', 12);
+=======
+$pdf->setFont('times', '', 12);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // add a page
 $pdf->AddPage();
@@ -83,19 +117,33 @@ $right_column = '<b>RIGHT COLUMN</b> right column right column right column righ
 $y = $pdf->getY();
 
 // set color for background
+<<<<<<< HEAD
 $pdf->SetFillColor(255, 255, 200);
 
 // set color for text
 $pdf->SetTextColor(0, 63, 127);
+=======
+$pdf->setFillColor(255, 255, 200);
+
+// set color for text
+$pdf->setTextColor(0, 63, 127);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // write the first column
 $pdf->writeHTMLCell(80, '', '', $y, $left_column, 1, 0, 1, true, 'J', true);
 
 // set color for background
+<<<<<<< HEAD
 $pdf->SetFillColor(215, 235, 255);
 
 // set color for text
 $pdf->SetTextColor(127, 31, 0);
+=======
+$pdf->setFillColor(215, 235, 255);
+
+// set color for text
+$pdf->setTextColor(127, 31, 0);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // write the second column
 $pdf->writeHTMLCell(80, '', '', '', $right_column, 1, 1, 1, true, 'J', true);

@@ -523,10 +523,17 @@ class PDF417 {
 	/**
 	 * This is the class constructor.
 	 * Creates a PDF417 object
+<<<<<<< HEAD
 	 * @param $code (string) code to represent using PDF417
 	 * @param $ecl (int) error correction level (0-8); default -1 = automatic correction level
 	 * @param $aspectratio (float) the width to height of the symbol (excluding quiet zones)
 	 * @param $macro (array) information for macro block
+=======
+	 * @param string $code code to represent using PDF417
+	 * @param int $ecl error correction level (0-8); default -1 = automatic correction level
+	 * @param float $aspectratio the width to height of the symbol (excluding quiet zones)
+	 * @param array $macro information for macro block
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	 * @public
 	 */
 	public function __construct($code, $ecl=-1, $aspectratio=2, $macro=array()) {
@@ -734,12 +741,18 @@ class PDF417 {
 
 	/**
 	 * Returns the error correction level (0-8) to be used
+<<<<<<< HEAD
 	 * @param $ecl (int) error correction level
 	 * @param $numcw (int) number of data codewords
+=======
+	 * @param int $ecl error correction level
+	 * @param int $numcw number of data codewords
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	 * @return int error correction level
 	 * @protected
 	 */
 	protected function getErrorCorrectionLevel($ecl, $numcw) {
+<<<<<<< HEAD
 		// get maximum correction level
 		$maxecl = 8; // starting error level
 		$maxerrsize = (928 - $numcw); // available codewords for error
@@ -750,6 +763,9 @@ class PDF417 {
 			}
 			--$maxecl;
 		}
+=======
+		$maxecl = 8; // starting error level
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 		// check for automatic levels
 		if (($ecl < 0) OR ($ecl > 8)) {
 			if ($numcw < 41) {
@@ -764,6 +780,18 @@ class PDF417 {
 				$ecl = $maxecl;
 			}
 		}
+<<<<<<< HEAD
+=======
+		// get maximum correction level
+		$maxerrsize = (928 - $numcw); // available codewords for error
+		while ($maxecl > 0) {
+			$errsize = (2 << $ecl);
+			if ($maxerrsize >= $errsize) {
+				break;
+			}
+			--$maxecl;
+		}
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 		if ($ecl > $maxecl) {
 			$ecl = $maxecl;
 		}
@@ -772,8 +800,13 @@ class PDF417 {
 
 	/**
 	 * Returns the error correction codewords
+<<<<<<< HEAD
 	 * @param $cw (array) array of codewords including Symbol Length Descriptor and pad
 	 * @param $ecl (int) error correction level 0-8
+=======
+	 * @param array $cw array of codewords including Symbol Length Descriptor and pad
+	 * @param int $ecl error correction level 0-8
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	 * @return array of error correction codewords
 	 * @protected
 	 */
@@ -809,8 +842,13 @@ class PDF417 {
 
 	/**
 	 * Create array of sequences from input
+<<<<<<< HEAD
 	 * @param $code (string) code
 	 * @return bidimensional array containing characters and classification
+=======
+	 * @param string $code code
+	 * @return array bi-dimensional array containing characters and classification
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	 * @protected
 	 */
 	protected function getInputSequences($code) {
@@ -864,9 +902,15 @@ class PDF417 {
 
 	/**
 	 * Compact data by mode.
+<<<<<<< HEAD
 	 * @param $mode (int) compaction mode number
 	 * @param $code (string) data to compact
 	 * @param $addmode (boolean) if true add the mode codeword at first position
+=======
+	 * @param int $mode compaction mode number
+	 * @param string $code data to compact
+	 * @param boolean $addmode if true add the mode codeword at first position
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	 * @return array of codewords
 	 * @protected
 	 */
@@ -878,7 +922,11 @@ class PDF417 {
 				$txtarr = array(); // array of characters and sub-mode switching characters
 				$codelen = strlen($code);
 				for ($i = 0; $i < $codelen; ++$i) {
+<<<<<<< HEAD
 					$chval = ord($code{$i});
+=======
+					$chval = ord($code[$i]);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 					if (($k = array_search($chval, $this->textsubmodes[$submode])) !== false) {
 						// we are on the same sub-mode
 						$txtarr[] = $k;
@@ -888,7 +936,11 @@ class PDF417 {
 							// search new sub-mode
 							if (($s != $submode) AND (($k = array_search($chval, $this->textsubmodes[$s])) !== false)) {
 								// $s is the new submode
+<<<<<<< HEAD
 								if (((($i + 1) == $codelen) OR ((($i + 1) < $codelen) AND (array_search(ord($code{($i + 1)}), $this->textsubmodes[$submode]) !== false))) AND (($s == 3) OR (($s == 0) AND ($submode == 1)))) {
+=======
+								if (((($i + 1) == $codelen) OR ((($i + 1) < $codelen) AND (array_search(ord($code[($i + 1)]), $this->textsubmodes[$submode]) !== false))) AND (($s == 3) OR (($s == 0) AND ($submode == 1)))) {
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 									// shift (temporary change only for this char)
 									if ($s == 3) {
 										// shift to puntuaction
@@ -943,8 +995,13 @@ class PDF417 {
 						// tmp array for the 6 bytes block
 						$cw6 = array();
 						do {
+<<<<<<< HEAD
 							$d = bcmod($t, '900');
 							$t = bcdiv($t, '900');
+=======
+							$d = bcmod($t, '900', 0);
+							$t = bcdiv($t, '900', 0);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 							// prepend the value to the beginning of the array
 							array_unshift($cw6, $d);
 						} while ($t != '0');
@@ -952,7 +1009,11 @@ class PDF417 {
 						$cw = array_merge($cw, $cw6);
 					} else {
 						for ($i = 0; $i < $sublen; ++$i) {
+<<<<<<< HEAD
 							$cw[] = ord($code{$i});
+=======
+							$cw[] = ord($code[$i]);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 						}
 					}
 					$code = $rest;
@@ -969,8 +1030,13 @@ class PDF417 {
 					}
 					$t = '1'.$code;
 					do {
+<<<<<<< HEAD
 						$d = bcmod($t, '900');
 						$t = bcdiv($t, '900');
+=======
+						$d = bcmod($t, '900', 0);
+						$t = bcdiv($t, '900', 0);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 						array_unshift($cw, $d);
 					} while ($t != '0');
 					$code = $rest;

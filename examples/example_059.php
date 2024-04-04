@@ -22,6 +22,12 @@
  * @abstract TCPDF - Example: Table Of Content using HTML templates.
  * @author Nicola Asuni
  * @since 2010-05-06
+<<<<<<< HEAD
+=======
+ * @group toc
+ * @group html
+ * @group pdf
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
  */
 
 // Include the main TCPDF library (search for installation path).
@@ -66,6 +72,7 @@ class TOC_TCPDF extends TCPDF {
 $pdf = new TOC_TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
+<<<<<<< HEAD
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Nicola Asuni');
 $pdf->SetTitle('TCPDF Example 059');
@@ -74,12 +81,23 @@ $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
 $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 059', PDF_HEADER_STRING);
+=======
+$pdf->setCreator(PDF_CREATOR);
+$pdf->setAuthor('Nicola Asuni');
+$pdf->setTitle('TCPDF Example 059');
+$pdf->setSubject('TCPDF Tutorial');
+$pdf->setKeywords('TCPDF, PDF, example, test, guide');
+
+// set default header data
+$pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 059', PDF_HEADER_STRING);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
+<<<<<<< HEAD
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
@@ -89,6 +107,17 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+=======
+$pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+// set margins
+$pdf->setMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+$pdf->setHeaderMargin(PDF_MARGIN_HEADER);
+$pdf->setFooterMargin(PDF_MARGIN_FOOTER);
+
+// set auto page breaks
+$pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -100,7 +129,11 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 }
 
 // set font
+<<<<<<< HEAD
 $pdf->SetFont('helvetica', '', 10);
+=======
+$pdf->setFont('helvetica', '', 10);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // ---------------------------------------------------------
 
@@ -146,10 +179,17 @@ for ($i = 2; $i < 12; $i++) {
 $pdf->addTOCPage();
 
 // write the TOC title and/or other elements on the TOC page
+<<<<<<< HEAD
 $pdf->SetFont('times', 'B', 16);
 $pdf->MultiCell(0, 0, 'Table Of Content', 0, 'C', 0, 1, '', '', true, 0);
 $pdf->Ln();
 $pdf->SetFont('helvetica', '', 10);
+=======
+$pdf->setFont('times', 'B', 16);
+$pdf->MultiCell(0, 0, 'Table Of Content', 0, 'C', 0, 1, '', '', true, 0);
+$pdf->Ln();
+$pdf->setFont('helvetica', '', 10);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // define styles for various bookmark levels
 $bookmark_templates = array();

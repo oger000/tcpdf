@@ -22,6 +22,12 @@
  * @abstract TCPDF - Example: WriteHTML and RTL support
  * @author Nicola Asuni
  * @since 2008-03-04
+<<<<<<< HEAD
+=======
+ * @group html
+ * @group rtl
+ * @group pdf
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
  */
 
 // Include the main TCPDF library (search for installation path).
@@ -31,6 +37,7 @@ require_once('tcpdf_include.php');
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
+<<<<<<< HEAD
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Nicola Asuni');
 $pdf->SetTitle('TCPDF Example 006');
@@ -39,12 +46,23 @@ $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
 $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 006', PDF_HEADER_STRING);
+=======
+$pdf->setCreator(PDF_CREATOR);
+$pdf->setAuthor('Nicola Asuni');
+$pdf->setTitle('TCPDF Example 006');
+$pdf->setSubject('TCPDF Tutorial');
+$pdf->setKeywords('TCPDF, PDF, example, test, guide');
+
+// set default header data
+$pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 006', PDF_HEADER_STRING);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
+<<<<<<< HEAD
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
@@ -54,6 +72,17 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+=======
+$pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+// set margins
+$pdf->setMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+$pdf->setHeaderMargin(PDF_MARGIN_HEADER);
+$pdf->setFooterMargin(PDF_MARGIN_FOOTER);
+
+// set auto page breaks
+$pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -67,7 +96,11 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // set font
+<<<<<<< HEAD
 $pdf->SetFont('dejavusans', '', 10);
+=======
+$pdf->setFont('dejavusans', '', 10);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // add a page
 $pdf->AddPage();
@@ -194,7 +227,11 @@ $pdf->writeHTML($html, true, false, true, false, '');
 
 $html = '<span color="red">red</span> <span color="green">green</span> <span color="blue">blue</span><br /><span color="red">red</span> <span color="green">green</span> <span color="blue">blue</span>';
 
+<<<<<<< HEAD
 $pdf->SetFillColor(255,255,0);
+=======
+$pdf->setFillColor(255,255,0);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 $pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
 $pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 1, true, 'C', true);
@@ -224,6 +261,23 @@ $html = '<h1>Image alignments on HTML table</h1>
 // output the HTML content
 $pdf->writeHTML($html, true, false, true, false, '');
 
+<<<<<<< HEAD
+=======
+// create some HTML content
+$html = '<h1>Embedded Images</h1>
+<table cellpadding="1" cellspacing="1" border="1" style="text-align:center;">
+<tr><td>src="@..." </td><td><img src="@DATA1@" border="0" height="41" width="41" /></td></tr>
+<tr><td>src="data..."</td><td><img src="@DATA2@" border="0" height="41" width="41" /></td></tr>
+</table>';
+
+$data = base64_encode(file_get_contents("images/logo_example.png"));
+$html = str_replace("@DATA1@", "@" . $data, $html);
+$html = str_replace("@DATA2@", "data:image/png;base64," . $data, $html);
+
+// output the HTML content
+$pdf->writeHTML($html, true, false, true, false, '');
+
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 // reset pointer to the last page
 $pdf->lastPage();
 

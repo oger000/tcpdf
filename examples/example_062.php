@@ -22,6 +22,11 @@
  * @abstract TCPDF - Example: XObject Template
  * @author Nicola Asuni
  * @since 2010-08-25
+<<<<<<< HEAD
+=======
+ * @group object
+ * @group pdf
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
  */
 
 // Include the main TCPDF library (search for installation path).
@@ -31,6 +36,7 @@ require_once('tcpdf_include.php');
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
+<<<<<<< HEAD
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Nicola Asuni');
 $pdf->SetTitle('TCPDF Example 062');
@@ -39,12 +45,23 @@ $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
 $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 062', PDF_HEADER_STRING);
+=======
+$pdf->setCreator(PDF_CREATOR);
+$pdf->setAuthor('Nicola Asuni');
+$pdf->setTitle('TCPDF Example 062');
+$pdf->setSubject('TCPDF Tutorial');
+$pdf->setKeywords('TCPDF, PDF, example, test, guide');
+
+// set default header data
+$pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 062', PDF_HEADER_STRING);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
+<<<<<<< HEAD
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
@@ -54,6 +71,17 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+=======
+$pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+// set margins
+$pdf->setMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+$pdf->setHeaderMargin(PDF_MARGIN_HEADER);
+$pdf->setFooterMargin(PDF_MARGIN_FOOTER);
+
+// set auto page breaks
+$pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -67,7 +95,11 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // set font
+<<<<<<< HEAD
 $pdf->SetFont('helvetica', 'B', 20);
+=======
+$pdf->setFont('helvetica', 'B', 20);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // add a page
 $pdf->AddPage();
@@ -102,11 +134,19 @@ $pdf->Image('images/image_demo.jpg', 0, 0, 60, 60, '', '', '', true, 72, '', fal
 //Stop Graphic Transformation
 $pdf->StopTransform();
 
+<<<<<<< HEAD
 $pdf->SetXY(0, 0);
 
 $pdf->SetFont('times', '', 40);
 
 $pdf->SetTextColor(255, 0, 0);
+=======
+$pdf->setXY(0, 0);
+
+$pdf->setFont('times', '', 40);
+
+$pdf->setTextColor(255, 0, 0);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // print a text
 $pdf->Cell(60, 60, 'Template', 0, 0, 'C', false, '', 0, false, 'T', 'M');
@@ -118,6 +158,7 @@ $pdf->endTemplate();
 
 // print the selected Template various times using various transparencies
 
+<<<<<<< HEAD
 $pdf->SetAlpha(0.4);
 $pdf->printTemplate($template_id, 15, 50, 20, 20, '', '', false);
 
@@ -128,6 +169,18 @@ $pdf->SetAlpha(0.8);
 $pdf->printTemplate($template_id, 55, 85, 60, 60, '', '', false);
 
 $pdf->SetAlpha(1);
+=======
+$pdf->setAlpha(0.4);
+$pdf->printTemplate($template_id, 15, 50, 20, 20, '', '', false);
+
+$pdf->setAlpha(0.6);
+$pdf->printTemplate($template_id, 27, 62, 40, 40, '', '', false);
+
+$pdf->setAlpha(0.8);
+$pdf->printTemplate($template_id, 55, 85, 60, 60, '', '', false);
+
+$pdf->setAlpha(1);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 $pdf->printTemplate($template_id, 95, 125, 80, 80, '', '', false);
 
 // ---------------------------------------------------------

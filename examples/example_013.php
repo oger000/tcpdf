@@ -22,6 +22,11 @@
  * @abstract TCPDF - Example: Graphic Transformations
  * @author Nicola Asuni
  * @since 2008-03-04
+<<<<<<< HEAD
+=======
+ * @group drawing
+ * @group pdf
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
  */
 
 // Include the main TCPDF library (search for installation path).
@@ -31,6 +36,7 @@ require_once('tcpdf_include.php');
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
+<<<<<<< HEAD
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Nicola Asuni');
 $pdf->SetTitle('TCPDF Example 013');
@@ -39,12 +45,23 @@ $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
 $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 013', PDF_HEADER_STRING);
+=======
+$pdf->setCreator(PDF_CREATOR);
+$pdf->setAuthor('Nicola Asuni');
+$pdf->setTitle('TCPDF Example 013');
+$pdf->setSubject('TCPDF Tutorial');
+$pdf->setKeywords('TCPDF, PDF, example, test, guide');
+
+// set default header data
+$pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 013', PDF_HEADER_STRING);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
+<<<<<<< HEAD
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
@@ -54,6 +71,17 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+=======
+$pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+// set margins
+$pdf->setMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+$pdf->setHeaderMargin(PDF_MARGIN_HEADER);
+$pdf->setFooterMargin(PDF_MARGIN_FOOTER);
+
+// set auto page breaks
+$pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -67,7 +95,11 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // set font
+<<<<<<< HEAD
 $pdf->SetFont('helvetica', 'B', 20);
+=======
+$pdf->setFont('helvetica', 'B', 20);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // add a page
 $pdf->AddPage();
@@ -75,6 +107,7 @@ $pdf->AddPage();
 $pdf->Write(0, 'Graphic Transformations', '', 0, 'C', 1, 0, false, false, 0);
 
 // set font
+<<<<<<< HEAD
 $pdf->SetFont('helvetica', '', 10);
 
 // --- Scaling ---------------------------------------------
@@ -84,6 +117,17 @@ $pdf->Rect(50, 70, 40, 10, 'D');
 $pdf->Text(50, 66, 'Scale');
 $pdf->SetDrawColor(0);
 $pdf->SetTextColor(0);
+=======
+$pdf->setFont('helvetica', '', 10);
+
+// --- Scaling ---------------------------------------------
+$pdf->setDrawColor(200);
+$pdf->setTextColor(200);
+$pdf->Rect(50, 70, 40, 10, 'D');
+$pdf->Text(50, 66, 'Scale');
+$pdf->setDrawColor(0);
+$pdf->setTextColor(0);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 // Start Transformation
 $pdf->StartTransform();
 // Scale by 150% centered by (50,80) which is the lower left corner of the rectangle
@@ -94,12 +138,21 @@ $pdf->Text(50, 66, 'Scale');
 $pdf->StopTransform();
 
 // --- Translation -----------------------------------------
+<<<<<<< HEAD
 $pdf->SetDrawColor(200);
 $pdf->SetTextColor(200);
 $pdf->Rect(125, 70, 40, 10, 'D');
 $pdf->Text(125, 66, 'Translate');
 $pdf->SetDrawColor(0);
 $pdf->SetTextColor(0);
+=======
+$pdf->setDrawColor(200);
+$pdf->setTextColor(200);
+$pdf->Rect(125, 70, 40, 10, 'D');
+$pdf->Text(125, 66, 'Translate');
+$pdf->setDrawColor(0);
+$pdf->setTextColor(0);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 // Start Transformation
 $pdf->StartTransform();
 // Translate 7 to the right, 5 to the bottom
@@ -110,12 +163,21 @@ $pdf->Text(125, 66, 'Translate');
 $pdf->StopTransform();
 
 // --- Rotation --------------------------------------------
+<<<<<<< HEAD
 $pdf->SetDrawColor(200);
 $pdf->SetTextColor(200);
 $pdf->Rect(70, 100, 40, 10, 'D');
 $pdf->Text(70, 96, 'Rotate');
 $pdf->SetDrawColor(0);
 $pdf->SetTextColor(0);
+=======
+$pdf->setDrawColor(200);
+$pdf->setTextColor(200);
+$pdf->Rect(70, 100, 40, 10, 'D');
+$pdf->Text(70, 96, 'Rotate');
+$pdf->setDrawColor(0);
+$pdf->setTextColor(0);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 // Start Transformation
 $pdf->StartTransform();
 // Rotate 20 degrees counter-clockwise centered by (70,110) which is the lower left corner of the rectangle
@@ -126,12 +188,21 @@ $pdf->Text(70, 96, 'Rotate');
 $pdf->StopTransform();
 
 // --- Skewing ---------------------------------------------
+<<<<<<< HEAD
 $pdf->SetDrawColor(200);
 $pdf->SetTextColor(200);
 $pdf->Rect(125, 100, 40, 10, 'D');
 $pdf->Text(125, 96, 'Skew');
 $pdf->SetDrawColor(0);
 $pdf->SetTextColor(0);
+=======
+$pdf->setDrawColor(200);
+$pdf->setTextColor(200);
+$pdf->Rect(125, 100, 40, 10, 'D');
+$pdf->Text(125, 96, 'Skew');
+$pdf->setDrawColor(0);
+$pdf->setTextColor(0);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 // Start Transformation
 $pdf->StartTransform();
 // skew 30 degrees along the x-axis centered by (125,110) which is the lower left corner of the rectangle
@@ -142,12 +213,21 @@ $pdf->Text(125, 96, 'Skew');
 $pdf->StopTransform();
 
 // --- Mirroring horizontally ------------------------------
+<<<<<<< HEAD
 $pdf->SetDrawColor(200);
 $pdf->SetTextColor(200);
 $pdf->Rect(70, 130, 40, 10, 'D');
 $pdf->Text(70, 126, 'MirrorH');
 $pdf->SetDrawColor(0);
 $pdf->SetTextColor(0);
+=======
+$pdf->setDrawColor(200);
+$pdf->setTextColor(200);
+$pdf->Rect(70, 130, 40, 10, 'D');
+$pdf->Text(70, 126, 'MirrorH');
+$pdf->setDrawColor(0);
+$pdf->setTextColor(0);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 // Start Transformation
 $pdf->StartTransform();
 // mirror horizontally with axis of reflection at x-position 70 (left side of the rectangle)
@@ -158,12 +238,21 @@ $pdf->Text(70, 126, 'MirrorH');
 $pdf->StopTransform();
 
 // --- Mirroring vertically --------------------------------
+<<<<<<< HEAD
 $pdf->SetDrawColor(200);
 $pdf->SetTextColor(200);
 $pdf->Rect(125, 130, 40, 10, 'D');
 $pdf->Text(125, 126, 'MirrorV');
 $pdf->SetDrawColor(0);
 $pdf->SetTextColor(0);
+=======
+$pdf->setDrawColor(200);
+$pdf->setTextColor(200);
+$pdf->Rect(125, 130, 40, 10, 'D');
+$pdf->Text(125, 126, 'MirrorV');
+$pdf->setDrawColor(0);
+$pdf->setTextColor(0);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 // Start Transformation
 $pdf->StartTransform();
 // mirror vertically with axis of reflection at y-position 140 (bottom side of the rectangle)
@@ -174,12 +263,21 @@ $pdf->Text(125, 126, 'MirrorV');
 $pdf->StopTransform();
 
 // --- Point reflection ------------------------------------
+<<<<<<< HEAD
 $pdf->SetDrawColor(200);
 $pdf->SetTextColor(200);
 $pdf->Rect(70, 160, 40, 10, 'D');
 $pdf->Text(70, 156, 'MirrorP');
 $pdf->SetDrawColor(0);
 $pdf->SetTextColor(0);
+=======
+$pdf->setDrawColor(200);
+$pdf->setTextColor(200);
+$pdf->Rect(70, 160, 40, 10, 'D');
+$pdf->Text(70, 156, 'MirrorP');
+$pdf->setDrawColor(0);
+$pdf->setTextColor(0);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 // Start Transformation
 $pdf->StartTransform();
 // point reflection at the lower left point of rectangle
@@ -196,7 +294,11 @@ $py=170;
 
 // just for visualisation: the straight line to mirror against
 
+<<<<<<< HEAD
 $pdf->SetDrawColor(200);
+=======
+$pdf->setDrawColor(200);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 $pdf->Line($px-1,$py-1,$px+1,$py+1);
 $pdf->Line($px-1,$py+1,$px+1,$py-1);
 $pdf->StartTransform();
@@ -204,12 +306,21 @@ $pdf->Rotate($angle, $px, $py);
 $pdf->Line($px-5, $py, $px+60, $py);
 $pdf->StopTransform();
 
+<<<<<<< HEAD
 $pdf->SetDrawColor(200);
 $pdf->SetTextColor(200);
 $pdf->Rect(125, 160, 40, 10, 'D');
 $pdf->Text(125, 156, 'MirrorL');
 $pdf->SetDrawColor(0);
 $pdf->SetTextColor(0);
+=======
+$pdf->setDrawColor(200);
+$pdf->setTextColor(200);
+$pdf->Rect(125, 160, 40, 10, 'D');
+$pdf->Text(125, 156, 'MirrorL');
+$pdf->setDrawColor(0);
+$pdf->setTextColor(0);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 //Start Transformation
 $pdf->StartTransform();
 //mirror against the straight line

@@ -23,6 +23,12 @@
 * @abstract TCPDF - Example: Two columns composed by MultiCell of different heights
 * @author Nicola Asuni
 * @since 2008-03-04
+<<<<<<< HEAD
+=======
+* @group cell
+* @group column
+* @group pdf
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 */
 
 // Include the main TCPDF library (search for installation path).
@@ -63,7 +69,11 @@ class MYPDF extends TCPDF {
 		}
 
 		$this->setPage(max($page_end_1,$page_end_2));
+<<<<<<< HEAD
 		$this->SetXY($this->GetX(),$ynew);
+=======
+		$this->setXY($this->GetX(),$ynew);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	}
 
 }
@@ -72,6 +82,7 @@ class MYPDF extends TCPDF {
 $pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
+<<<<<<< HEAD
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Nicola Asuni');
 $pdf->SetTitle('TCPDF Example 020');
@@ -80,12 +91,23 @@ $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
 $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 020', PDF_HEADER_STRING);
+=======
+$pdf->setCreator(PDF_CREATOR);
+$pdf->setAuthor('Nicola Asuni');
+$pdf->setTitle('TCPDF Example 020');
+$pdf->setSubject('TCPDF Tutorial');
+$pdf->setKeywords('TCPDF, PDF, example, test, guide');
+
+// set default header data
+$pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 020', PDF_HEADER_STRING);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
+<<<<<<< HEAD
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
@@ -95,6 +117,17 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+=======
+$pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+// set margins
+$pdf->setMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+$pdf->setHeaderMargin(PDF_MARGIN_HEADER);
+$pdf->setFooterMargin(PDF_MARGIN_FOOTER);
+
+// set auto page breaks
+$pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -108,7 +141,11 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // set font
+<<<<<<< HEAD
 $pdf->SetFont('helvetica', '', 20);
+=======
+$pdf->setFont('helvetica', '', 20);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 // add a page
 $pdf->AddPage();
 
@@ -116,6 +153,7 @@ $pdf->Write(0, 'Example of text layout using Multicell()', '', 0, 'L', true, 0, 
 
 $pdf->Ln(5);
 
+<<<<<<< HEAD
 $pdf->SetFont('times', '', 9);
 
 //$pdf->SetCellPadding(0);
@@ -123,6 +161,15 @@ $pdf->SetFont('times', '', 9);
 
 // set color for background
 $pdf->SetFillColor(255, 255, 200);
+=======
+$pdf->setFont('times', '', 9);
+
+//$pdf->setCellPadding(0);
+//$pdf->setLineWidth(2);
+
+// set color for background
+$pdf->setFillColor(255, 255, 200);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 $text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed imperdiet lectus. Phasellus quis velit velit, non condimentum quam. Sed neque urna, ultrices ac volutpat vel, laoreet vitae augue. Sed vel velit erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras eget velit nulla, eu sagittis elit. Nunc ac arcu est, in lobortis tellus. Praesent condimentum rhoncus sodales. In hac habitasse platea dictumst. Proin porta eros pharetra enim tincidunt dignissim nec vel dolor. Cras sapien elit, ornare ac dignissim eu, ultricies ac eros. Maecenas augue magna, ultrices a congue in, mollis eu nulla. Nunc venenatis massa at est eleifend faucibus. Vivamus sed risus lectus, nec interdum nunc.
 

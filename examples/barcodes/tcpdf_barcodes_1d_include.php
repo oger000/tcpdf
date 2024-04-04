@@ -24,7 +24,20 @@
  */
 
 // Include the TCPDF 1D barcode class (search the class on the following directories).
+<<<<<<< HEAD
 $tcpdf_barcodes_1d_include_dirs = array(realpath('../../tcpdf_barcodes_1d.php'), '/usr/share/php/tcpdf/tcpdf_barcodes_1d.php', '/usr/share/tcpdf/tcpdf_barcodes_1d.php', '/usr/share/php-tcpdf/tcpdf_barcodes_1d.php', '/var/www/tcpdf/tcpdf_barcodes_1d.php', '/var/www/html/tcpdf/tcpdf_barcodes_1d.php', '/usr/local/apache2/htdocs/tcpdf/tcpdf_barcodes_1d.php');
+=======
+$tcpdf_barcodes_1d_include_dirs = array(
+    realpath(dirname(__FILE__) . '/../../tcpdf_barcodes_1d.php'),// True source file
+	realpath('../../tcpdf_barcodes_1d.php'),// Relative from $PWD
+	'/usr/share/php/tcpdf/tcpdf_barcodes_1d.php',
+	'/usr/share/tcpdf/tcpdf_barcodes_1d.php',
+	'/usr/share/php-tcpdf/tcpdf_barcodes_1d.php',
+	'/var/www/tcpdf/tcpdf_barcodes_1d.php',
+	'/var/www/html/tcpdf/tcpdf_barcodes_1d.php',
+	'/usr/local/apache2/htdocs/tcpdf/tcpdf_barcodes_1d.php'
+);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 foreach ($tcpdf_barcodes_1d_include_dirs as $tcpdf_barcodes_1d_include_path) {
 	if (@file_exists($tcpdf_barcodes_1d_include_path)) {
 		require_once($tcpdf_barcodes_1d_include_path);

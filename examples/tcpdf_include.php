@@ -28,7 +28,12 @@ require_once('config/tcpdf_config_alt.php');
 
 // Include the main TCPDF library (search the library on the following directories).
 $tcpdf_include_dirs = array(
+<<<<<<< HEAD
 	realpath('../tcpdf.php'),
+=======
+    realpath(dirname(__FILE__) . '/../tcpdf.php'),// True source file
+	realpath('../tcpdf.php'),// Relative from $PWD
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	'/usr/share/php/tcpdf/tcpdf.php',
 	'/usr/share/tcpdf/tcpdf.php',
 	'/usr/share/php-tcpdf/tcpdf.php',

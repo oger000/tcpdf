@@ -22,6 +22,11 @@
  * @abstract TCPDF - Example: Spot colors.
  * @author Nicola Asuni
  * @since 2008-09-12
+<<<<<<< HEAD
+=======
+ * @group color
+ * @group pdf
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
  */
 
 // Include the main TCPDF library (search for installation path).
@@ -31,6 +36,7 @@ require_once('tcpdf_include.php');
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
+<<<<<<< HEAD
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Nicola Asuni');
 $pdf->SetTitle('TCPDF Example 037');
@@ -39,12 +45,23 @@ $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
 $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 037', PDF_HEADER_STRING);
+=======
+$pdf->setCreator(PDF_CREATOR);
+$pdf->setAuthor('Nicola Asuni');
+$pdf->setTitle('TCPDF Example 037');
+$pdf->setSubject('TCPDF Tutorial');
+$pdf->setKeywords('TCPDF, PDF, example, test, guide');
+
+// set default header data
+$pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 037', PDF_HEADER_STRING);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
+<<<<<<< HEAD
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
@@ -54,6 +71,17 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+=======
+$pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+// set margins
+$pdf->setMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+$pdf->setHeaderMargin(PDF_MARGIN_HEADER);
+$pdf->setFooterMargin(PDF_MARGIN_FOOTER);
+
+// set auto page breaks
+$pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -67,7 +95,11 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // set font
+<<<<<<< HEAD
 $pdf->SetFont('helvetica', '', 11);
+=======
+$pdf->setFont('helvetica', '', 11);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // add a page
 $pdf->AddPage();
@@ -78,7 +110,11 @@ $html = '<h1>Example of Spot Colors</h1>Spot colors are single ink colors, rathe
 $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, 'J', true);
 
 
+<<<<<<< HEAD
 $pdf->SetFont('helvetica', '', 10);
+=======
+$pdf->setFont('helvetica', '', 10);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // Define some new spot colors
 // $c, $m, $y and $k (2nd, 3rd, 4th and 5th parameter) are the CMYK color components.
@@ -94,23 +130,40 @@ $pdf->AddSpotColor('My TCPDF Yellow', 0, 20, 100, 0);
 
 // Select the spot color
 // $tint (the second parameter) is the intensity of the color (0-100).
+<<<<<<< HEAD
 // SetTextSpotColor($name, $tint=100)
 // SetDrawSpotColor($name, $tint=100)
 // SetFillSpotColor($name, $tint=100)
 
 $pdf->SetTextSpotColor('My TCPDF Black', 100);
 $pdf->SetDrawSpotColor('My TCPDF Black', 100);
+=======
+// setTextSpotColor($name, $tint=100)
+// setDrawSpotColor($name, $tint=100)
+// setFillSpotColor($name, $tint=100)
+
+$pdf->setTextSpotColor('My TCPDF Black', 100);
+$pdf->setDrawSpotColor('My TCPDF Black', 100);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 $starty = 100;
 
 // print some spot colors
 
+<<<<<<< HEAD
 $pdf->SetFillSpotColor('My TCPDF Dark Green', 100);
+=======
+$pdf->setFillSpotColor('My TCPDF Dark Green', 100);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 $pdf->Rect(30, $starty, 40, 20, 'DF');
 $pdf->Text(73, $starty + 8, 'My TCPDF Dark Green');
 
 $starty += 24;
+<<<<<<< HEAD
 $pdf->SetFillSpotColor('My TCPDF Light Yellow', 100);
+=======
+$pdf->setFillSpotColor('My TCPDF Light Yellow', 100);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 $pdf->Rect(30, $starty, 40, 20, 'DF');
 $pdf->Text(73, $starty + 8, 'My TCPDF Light Yellow');
 
@@ -118,22 +171,38 @@ $pdf->Text(73, $starty + 8, 'My TCPDF Light Yellow');
 // --- default values defined on spotcolors.php ---
 
 $starty += 24;
+<<<<<<< HEAD
 $pdf->SetFillSpotColor('My TCPDF Red', 100);
+=======
+$pdf->setFillSpotColor('My TCPDF Red', 100);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 $pdf->Rect(30, $starty, 40, 20, 'DF');
 $pdf->Text(73, $starty + 8, 'My TCPDF Red');
 
 $starty += 24;
+<<<<<<< HEAD
 $pdf->SetFillSpotColor('My TCPDF Green', 100);
+=======
+$pdf->setFillSpotColor('My TCPDF Green', 100);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 $pdf->Rect(30, $starty, 40, 20, 'DF');
 $pdf->Text(73, $starty + 8, 'My TCPDF Green');
 
 $starty += 24;
+<<<<<<< HEAD
 $pdf->SetFillSpotColor('My TCPDF Blue', 100);
+=======
+$pdf->setFillSpotColor('My TCPDF Blue', 100);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 $pdf->Rect(30, $starty, 40, 20, 'DF');
 $pdf->Text(73, $starty + 8, 'My TCPDF Blue');
 
 $starty += 24;
+<<<<<<< HEAD
 $pdf->SetFillSpotColor('My TCPDF Yellow', 100);
+=======
+$pdf->setFillSpotColor('My TCPDF Yellow', 100);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 $pdf->Rect(30, $starty, 40, 20, 'DF');
 $pdf->Text(73, $starty + 8, 'My TCPDF Yellow');
 

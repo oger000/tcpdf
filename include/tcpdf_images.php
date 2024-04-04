@@ -55,6 +55,11 @@ class TCPDF_IMAGES {
 	 * Array of hinheritable SVG properties.
 	 * @since 5.0.000 (2010-05-02)
 	 * @public static
+<<<<<<< HEAD
+=======
+	 * 
+	 * @var string[]
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	 */
 	public static $svginheritprop = array('clip-rule', 'color', 'color-interpolation', 'color-interpolation-filters', 'color-profile', 'color-rendering', 'cursor', 'direction', 'display', 'fill', 'fill-opacity', 'fill-rule', 'font', 'font-family', 'font-size', 'font-size-adjust', 'font-stretch', 'font-style', 'font-variant', 'font-weight', 'glyph-orientation-horizontal', 'glyph-orientation-vertical', 'image-rendering', 'kerning', 'letter-spacing', 'marker', 'marker-end', 'marker-mid', 'marker-start', 'pointer-events', 'shape-rendering', 'stroke', 'stroke-dasharray', 'stroke-dashoffset', 'stroke-linecap', 'stroke-linejoin', 'stroke-miterlimit', 'stroke-opacity', 'stroke-width', 'text-anchor', 'text-rendering', 'visibility', 'word-spacing', 'writing-mode');
 
@@ -62,8 +67,13 @@ class TCPDF_IMAGES {
 
 	/**
 	 * Return the image type given the file name or array returned by getimagesize() function.
+<<<<<<< HEAD
 	 * @param $imgfile (string) image file name
 	 * @param $iminfo (array) array of image information returned by getimagesize() function.
+=======
+	 * @param string $imgfile image file name
+	 * @param array $iminfo array of image information returned by getimagesize() function.
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	 * @return string image type
 	 * @since 4.8.017 (2009-11-27)
 	 * @public static
@@ -77,10 +87,14 @@ class TCPDF_IMAGES {
 			}
 		}
 		if (empty($type)) {
+<<<<<<< HEAD
 			$fileinfo = pathinfo($imgfile);
 			if (isset($fileinfo['extension']) AND (!TCPDF_STATIC::empty_string($fileinfo['extension']))) {
 				$type = strtolower(trim($fileinfo['extension']));
 			}
+=======
+            $type = strtolower(trim(pathinfo(parse_url($imgfile, PHP_URL_PATH), PATHINFO_EXTENSION)));
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 		}
 		if ($type == 'jpg') {
 			$type = 'jpeg';
@@ -90,9 +104,15 @@ class TCPDF_IMAGES {
 
 	/**
 	 * Set the transparency for the given GD image.
+<<<<<<< HEAD
 	 * @param $new_image (image) GD image object
 	 * @param $image (image) GD image object.
 	 * return GD image object.
+=======
+	 * @param resource $new_image GD image object
+	 * @param resource $image GD image object.
+	 * @return resource GD image object $new_image
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	 * @since 4.9.016 (2010-04-20)
 	 * @public static
 	 */
@@ -115,8 +135,13 @@ class TCPDF_IMAGES {
 	/**
 	 * Convert the loaded image to a PNG and then return a structure for the PDF creator.
 	 * This function requires GD library and write access to the directory defined on K_PATH_CACHE constant.
+<<<<<<< HEAD
 	 * @param $image (image) Image object.
 	 * @param $tempfile (string) Temporary file name.
+=======
+	 * @param resource $image Image object.
+	 * @param string $tempfile Temporary file name.
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	 * return image PNG image object.
 	 * @since 4.9.016 (2010-04-20)
 	 * @public static
@@ -138,10 +163,17 @@ class TCPDF_IMAGES {
 	/**
 	 * Convert the loaded image to a JPEG and then return a structure for the PDF creator.
 	 * This function requires GD library and write access to the directory defined on K_PATH_CACHE constant.
+<<<<<<< HEAD
 	 * @param $image (image) Image object.
 	 * @param $quality (int) JPEG quality.
 	 * @param $tempfile (string) Temporary file name.
 	 * return image JPEG image object.
+=======
+	 * @param resource $image Image object.
+	 * @param int $quality JPEG quality.
+	 * @param string $tempfile Temporary file name.
+	 * return array|false image JPEG image object.
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	 * @public static
 	 */
 	public static function _toJPEG($image, $quality, $tempfile) {
@@ -155,18 +187,28 @@ class TCPDF_IMAGES {
 
 	/**
 	 * Extract info from a JPEG file without using the GD library.
+<<<<<<< HEAD
 	 * @param $file (string) image file to parse
 	 * @return array structure containing the image data
+=======
+	 * @param string $file image file to parse
+	 * @return array|false structure containing the image data
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	 * @public static
 	 */
 	public static function _parsejpeg($file) {
 		// check if is a local file
+<<<<<<< HEAD
 		if (!@file_exists($file)) {
 			// try to encode spaces on filename
 			$tfile = str_replace(' ', '%20', $file);
 			if (@file_exists($tfile)) {
 				$file = $tfile;
 			}
+=======
+		if (!@TCPDF_STATIC::file_exists($file)) {
+			return false;
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 		}
 		$a = getimagesize($file);
 		if (empty($a)) {
@@ -238,8 +280,13 @@ class TCPDF_IMAGES {
 
 	/**
 	 * Extract info from a PNG file without using the GD library.
+<<<<<<< HEAD
 	 * @param $file (string) image file to parse
 	 * @return array structure containing the image data
+=======
+	 * @param string $file image file to parse
+	 * @return array|false structure containing the image data
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	 * @public static
 	 */
 	public static function _parsepng($file) {
@@ -315,7 +362,11 @@ class TCPDF_IMAGES {
 					if ($n > 0) {
 						$trns = array();
 						for ($i = 0; $i < $n; ++ $i) {
+<<<<<<< HEAD
 							$trns[] = ord($t{$i});
+=======
+							$trns[] = ord($t[$i]);
+>>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 						}
 					}
 				}
