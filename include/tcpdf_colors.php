@@ -240,15 +240,9 @@ class TCPDF_COLORS {
 
 	/**
 	 * Return the Spot color array.
-<<<<<<< HEAD
-	 * @param $name (string) Name of the spot color.
-	 * @param $spotc (array) Reference to an array of spot colors.
-	 * @return (array) Spot color array or false if not defined.
-=======
 	 * @param string $name Name of the spot color.
 	 * @param array $spotc Reference to an array of spot colors.
 	 * @return array|false Spot color array or false if not defined.
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	 * @since 5.9.125 (2011-10-03)
 	 * @public static
 	 */
@@ -270,17 +264,10 @@ class TCPDF_COLORS {
 
 	/**
 	 * Returns an array (RGB or CMYK) from an html color name, or a six-digit (i.e. #3FE5AA), or three-digit (i.e. #7FF) hexadecimal color, or a javascript color array, or javascript color name.
-<<<<<<< HEAD
-	 * @param $hcolor (string) HTML color.
-	 * @param $spotc (array) Reference to an array of spot colors.
-	 * @param $defcol (array) Color to return in case of error.
-	 * @return array RGB or CMYK color, or false in case of error.
-=======
 	 * @param string $hcolor HTML color.
 	 * @param array $spotc Reference to an array of spot colors.
 	 * @param array $defcol Color to return in case of error.
 	 * @return array|false RGB or CMYK color, or false in case of error.
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	 * @public static
 	 */
 	public static function convertHTMLColorToDec($hcolor, &$spotc, $defcol=array('R'=>128,'G'=>128,'B'=>128)) {
@@ -371,11 +358,7 @@ class TCPDF_COLORS {
 				$color_code = self::$webcolor[$color];
 			} else {
 				// spot color
-<<<<<<< HEAD
-				$returncolor = self::getSpotColor($color, $spotc);
-=======
 				$returncolor = self::getSpotColor($hcolor, $spotc);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 				if ($returncolor === false) {
 					$returncolor = $defcol;
 				}
@@ -424,13 +407,8 @@ class TCPDF_COLORS {
 
 	/**
 	 * Convert a color array into a string representation.
-<<<<<<< HEAD
-	 * @param $c (array) Array of colors.
-	 * @return (string) The color array representation.
-=======
 	 * @param array $c Array of colors.
 	 * @return string The color array representation.
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	 * @since 5.9.137 (2011-12-01)
 	 * @public static
 	 */
@@ -460,11 +438,7 @@ class TCPDF_COLORS {
 
 	/**
 	 * Convert color to javascript color.
-<<<<<<< HEAD
-	 * @param $color (string) color name or "#RRGGBB"
-=======
 	 * @param string $color color name or "#RRGGBB"
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	 * @protected
 	 * @since 2.1.002 (2008-02-12)
 	 * @public static
@@ -475,11 +449,7 @@ class TCPDF_COLORS {
 		}
 		if (!in_array($color, self::$jscolor)) {
 			// default transparent color
-<<<<<<< HEAD
-			$color = $jscolor[0];
-=======
 			$color = self::$jscolor[0];
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 		}
 		return 'color.'.$color;
 	}

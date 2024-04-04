@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-#!/usr/bin/php -q
-=======
 #!/usr/bin/env php
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 <?php
 //============================================================+
 // File name   : tcpdf_addfont.php

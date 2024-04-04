@@ -2,11 +2,7 @@
 //============================================================+
 // File name   : example_049.php
 // Begin       : 2009-04-03
-<<<<<<< HEAD
-// Last Update : 2014-12-10
-=======
 // Last Update : 2024-03-18
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 //
 // Description : Example 049 for TCPDF class
 //               WriteHTML with TCPDF callback functions
@@ -26,11 +22,8 @@
  * @abstract TCPDF - Example: WriteHTML with TCPDF callback functions
  * @author Nicola Asuni
  * @since 2008-03-04
-<<<<<<< HEAD
-=======
  * @group html
  * @group pdf
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
  */
 
 // Include the main TCPDF library (search for installation path).
@@ -40,16 +33,6 @@ require_once('tcpdf_include.php');
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
-<<<<<<< HEAD
-$pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('Nicola Asuni');
-$pdf->SetTitle('TCPDF Example 049');
-$pdf->SetSubject('TCPDF Tutorial');
-$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
-// set default header data
-$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 049', PDF_HEADER_STRING);
-=======
 $pdf->setCreator(PDF_CREATOR);
 $pdf->setAuthor('Nicola Asuni');
 $pdf->setTitle('TCPDF Example 049');
@@ -58,24 +41,12 @@ $pdf->setKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
 $pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 049', PDF_HEADER_STRING);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
-<<<<<<< HEAD
-$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
-// set margins
-$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
-
-// set auto page breaks
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-=======
 $pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
@@ -85,7 +56,6 @@ $pdf->setFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
 $pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -99,11 +69,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // set font
-<<<<<<< HEAD
-$pdf->SetFont('helvetica', '', 10);
-=======
 $pdf->setFont('helvetica', '', 10);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // add a page
 $pdf->AddPage();
@@ -112,19 +78,11 @@ $pdf->AddPage();
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
 IMPORTANT:
-<<<<<<< HEAD
-If you are printing user-generated content, tcpdf tag can be unsafe.
-You can disable this tag by setting to false the K_TCPDF_CALLS_IN_HTML
-constant on TCPDF configuration file.
-
-For security reasons, the parameters for the 'params' attribute of TCPDF
-=======
 If you are printing user-generated content, the tcpdf tag should be considered unsafe.
 This tag is disabled by default by the K_TCPDF_CALLS_IN_HTML constant on TCPDF configuration file.
 Please use this feature only if you are in control of the HTML content and you are sure that it does not contain any harmful code.
 
 For security reasons, the parameters for the 'params' attribute of TCPDF 
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 tag must be prepared as an array and encoded with the
 serializeTCPDFtagParameters() method (see the example below).
 
@@ -133,25 +91,6 @@ serializeTCPDFtagParameters() method (see the example below).
 
 $html = '<h1>Test TCPDF Methods in HTML</h1>
 <h2 style="color:red;">IMPORTANT:</h2>
-<<<<<<< HEAD
-<span style="color:red;">If you are using user-generated content, the tcpdf tag can be unsafe.<br />
-You can disable this tag by setting to false the <b>K_TCPDF_CALLS_IN_HTML</b> constant on TCPDF configuration file.</span>
-<h2>write1DBarcode method in HTML</h2>';
-
-$params = $pdf->serializeTCPDFtagParameters(array('CODE 39', 'C39', '', '', 80, 30, 0.4, array('position'=>'S', 'border'=>true, 'padding'=>4, 'fgcolor'=>array(0,0,0), 'bgcolor'=>array(255,255,255), 'text'=>true, 'font'=>'helvetica', 'fontsize'=>8, 'stretchtext'=>4), 'N'));
-$html .= '<tcpdf method="write1DBarcode" params="'.$params.'" />';
-
-$params = $pdf->serializeTCPDFtagParameters(array('CODE 128', 'C128', '', '', 80, 30, 0.4, array('position'=>'S', 'border'=>true, 'padding'=>4, 'fgcolor'=>array(0,0,0), 'bgcolor'=>array(255,255,255), 'text'=>true, 'font'=>'helvetica', 'fontsize'=>8, 'stretchtext'=>4), 'N'));
-$html .= '<tcpdf method="write1DBarcode" params="'.$params.'" />';
-
-$html .= '<tcpdf method="AddPage" /><h2>Graphic Functions</h2>';
-
-$params = $pdf->serializeTCPDFtagParameters(array(0));
-$html .= '<tcpdf method="SetDrawColor" params="'.$params.'" />';
-
-$params = $pdf->serializeTCPDFtagParameters(array(50, 50, 40, 10, 'DF', array(), array(0,128,255)));
-$html .= '<tcpdf method="Rect" params="'.$params.'" />';
-=======
 <span style="color:red;">If you are using user-generated content, the tcpdf tag should be considered unsafe.<br />
 Please use this feature only if you are in control of the HTML content and you are sure that it does not contain any harmful code.<br />
 This feature is disabled by default by the <b>K_TCPDF_CALLS_IN_HTML</b> constant on TCPDF configuration file.</span>
@@ -171,7 +110,6 @@ $html .= '<tcpdf data="'.$data.'" />';
 
 $data = $pdf->serializeTCPDFtag('Rect', array(50, 50, 40, 10, 'DF', array(), array(0,128,255)));
 $html .= '<tcpdf data="'.$data.'" />';
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 
 // output the HTML content

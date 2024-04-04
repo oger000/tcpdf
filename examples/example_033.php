@@ -22,11 +22,8 @@
  * @abstract TCPDF - Example: Mixed font types
  * @author Nicola Asuni
  * @since 2008-06-24
-<<<<<<< HEAD
-=======
  * @group font
  * @group pdf
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
  */
 
 // Include the main TCPDF library (search for installation path).
@@ -36,16 +33,6 @@ require_once('tcpdf_include.php');
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
-<<<<<<< HEAD
-$pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('Nicola Asuni');
-$pdf->SetTitle('TCPDF Example 033');
-$pdf->SetSubject('TCPDF Tutorial');
-$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
-// set default header data
-$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 033', PDF_HEADER_STRING);
-=======
 $pdf->setCreator(PDF_CREATOR);
 $pdf->setAuthor('Nicola Asuni');
 $pdf->setTitle('TCPDF Example 033');
@@ -54,24 +41,12 @@ $pdf->setKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
 $pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 033', PDF_HEADER_STRING);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
-<<<<<<< HEAD
-$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
-// set margins
-$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
-
-// set auto page breaks
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-=======
 $pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
@@ -81,7 +56,6 @@ $pdf->setFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
 $pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -100,41 +74,25 @@ $pdf->AddPage();
 // set default font subsetting mode
 $pdf->setFontSubsetting(false);
 
-<<<<<<< HEAD
-$pdf->SetFont('helvetica', 'B', 20);
-=======
 $pdf->setFont('helvetica', 'B', 20);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 $pdf->Write(0, 'Font Types', '', 0, 'C', 1, 0, false, false, 0);
 
 $pdf->Ln(10);
 
-<<<<<<< HEAD
-$pdf->SetFont('times', '', 10);
-=======
 $pdf->setFont('times', '', 10);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 $pdf->MultiCell(80, 0, "[Core font] : Cras eros leo, porttitor porta, accumsan fermentum, ornare ac, est. Praesent dui lorem, imperdiet at, cursus sed, facilisis aliquam, nibh. Nulla accumsan nonummy diam. Donec tempus. Etiam posuere. Proin lectus. Donec purus. Duis in sem pretium urna feugiat vehicula. Ut suscipit velit eget massa. Nam nonummy, enim commodo euismod placerat, tortor elit tempus lectus, quis suscipit metus lorem blandit turpis.\n", 1, 'J', 0, 1, '', '', true, 0);
 
 $pdf->Ln(2);
 
-<<<<<<< HEAD
-$pdf->SetFont('dejavusans', '', 10);
-=======
 $pdf->setFont('dejavusans', '', 10);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 $pdf->MultiCell(80, 0, "[True Type Unicode font] : Cras eros leo, porttitor porta, accumsan fermentum, ornare ac, est. Praesent dui lorem, imperdiet at, cursus sed, facilisis aliquam, nibh. Nulla accumsan nonummy diam. Donec tempus. Etiam posuere. Proin lectus. Donec purus. Duis in sem pretium urna feugiat vehicula. Ut suscipit velit eget massa. Nam nonummy, enim commodo euismod placerat, tortor elit tempus lectus, quis suscipit metus lorem blandit turpis.\n", 1, 'J', 0, 1, '', '', true, 0);
 
 $pdf->Ln(2);
 
-<<<<<<< HEAD
-$pdf->SetFont('cid0jp', '', 9);
-=======
 $pdf->setFont('cid0jp', '', 9);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 $pdf->MultiCell(80, 0, "[CID-0 font] : Cras eros leo, porttitor porta, accumsan fermentum, ornare ac, est. Praesent dui lorem, imperdiet at, cursus sed, facilisis aliquam, nibh. Nulla accumsan nonummy diam. Donec tempus. Etiam posuere. Proin lectus. Donec purus. Duis in sem pretium urna feugiat vehicula. Ut suscipit velit eget massa. Nam nonummy, enim commodo euismod placerat, tortor elit tempus lectus, quis suscipit metus lorem blandit turpis.\n", 1, 'J', 0, 1, '', '', true, 0);
 

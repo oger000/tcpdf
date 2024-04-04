@@ -357,11 +357,7 @@ please contact mssridhar AT vsnl.com.
 
 Noah Levitt found out that the Sinhalese fonts available on the site
 <http://www.metta.lk/fonts/> are released under GNU GPL, or,
-<<<<<<< HEAD
-precisely, "Public Domain under GNU Licence Produced by DMS
-=======
 precisely, "Public Domain under GNU Licence Produced by DMS
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 Electronics for The Sri Lanka Tipitaka Project" (taken from the font
 comment), and took the effort of recoding the font to Unicode.
 

@@ -22,11 +22,8 @@
  * @abstract TCPDF - Example: Text stretching and spacing (tracking)
  * @author Nicola Asuni
  * @since 2010-09-29
-<<<<<<< HEAD
-=======
  * @group text
  * @group pdf
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
  */
 
 // Include the main TCPDF library (search for installation path).
@@ -36,16 +33,6 @@ require_once('tcpdf_include.php');
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
-<<<<<<< HEAD
-$pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('Nicola Asuni');
-$pdf->SetTitle('TCPDF Example 063');
-$pdf->SetSubject('TCPDF Tutorial');
-$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
-// set default header data
-$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 063', PDF_HEADER_STRING);
-=======
 $pdf->setCreator(PDF_CREATOR);
 $pdf->setAuthor('Nicola Asuni');
 $pdf->setTitle('TCPDF Example 063');
@@ -54,24 +41,12 @@ $pdf->setKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
 $pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 063', PDF_HEADER_STRING);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
-<<<<<<< HEAD
-$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
-// set margins
-$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
-
-// set auto page breaks
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-=======
 $pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
@@ -81,7 +56,6 @@ $pdf->setFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
 $pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -95,11 +69,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // set font
-<<<<<<< HEAD
-$pdf->SetFont('helvetica', 'B', 16);
-=======
 $pdf->setFont('helvetica', 'B', 16);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // add a page
 $pdf->AddPage();
@@ -115,11 +85,7 @@ $alignments = array('L' => 'LEFT', 'C' => 'CENTER', 'R' => 'RIGHT', 'J' => 'JUST
 
 // Test all cases using direct stretching/spacing methods
 foreach ($fonts as $fkey => $font) {
-<<<<<<< HEAD
-	$pdf->SetFont($font, '', 14);
-=======
 	$pdf->setFont($font, '', 14);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	foreach ($alignments as $align_mode => $align_name) {
 		for ($stretching = 90; $stretching <= 110; $stretching += 10) {
 			for ($spacing = -0.254; $spacing <= 0.254; $spacing += 0.254) {
@@ -136,11 +102,7 @@ foreach ($fonts as $fkey => $font) {
 
 // Test all cases using CSS stretching/spacing properties
 foreach ($fonts as $fkey => $font) {
-<<<<<<< HEAD
-	$pdf->SetFont($font, '', 11);
-=======
 	$pdf->setFont($font, '', 11);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	foreach ($alignments as $align_mode => $align_name) {
 		for ($stretching = 90; $stretching <= 110; $stretching += 10) {
 			for ($spacing = -0.254; $spacing <= 0.254; $spacing += 0.254) {

@@ -22,12 +22,9 @@
  * @abstract TCPDF - Example: Full page background
  * @author Nicola Asuni
  * @since 2009-04-16
-<<<<<<< HEAD
-=======
  * @group background
  * @group page
  * @group pdf
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
  */
 
 // Include the main TCPDF library (search for installation path).
@@ -43,21 +40,12 @@ class MYPDF extends TCPDF {
 		// get current auto-page-break mode
 		$auto_page_break = $this->AutoPageBreak;
 		// disable auto-page-break
-<<<<<<< HEAD
-		$this->SetAutoPageBreak(false, 0);
-		// set bacground image
-		$img_file = K_PATH_IMAGES.'image_demo.jpg';
-		$this->Image($img_file, 0, 0, 210, 297, '', '', '', false, 300, '', false, false, 0);
-		// restore auto-page-break status
-		$this->SetAutoPageBreak($auto_page_break, $bMargin);
-=======
 		$this->setAutoPageBreak(false, 0);
 		// set bacground image
 		$img_file = K_PATH_IMAGES.'image_demo.jpg';
 		$this->Image($img_file, null, 0, 210, 297, '', '', '', false, 300, 'C', false, false, 0);
 		// restore auto-page-break status
 		$this->setAutoPageBreak($auto_page_break, $bMargin);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 		// set the starting point for the page content
 		$this->setPageMark();
 	}
@@ -67,49 +55,28 @@ class MYPDF extends TCPDF {
 $pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
-<<<<<<< HEAD
-$pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('Nicola Asuni');
-$pdf->SetTitle('TCPDF Example 051');
-$pdf->SetSubject('TCPDF Tutorial');
-$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-=======
 $pdf->setCreator(PDF_CREATOR);
 $pdf->setAuthor('Nicola Asuni');
 $pdf->setTitle('TCPDF Example 051');
 $pdf->setSubject('TCPDF Tutorial');
 $pdf->setKeywords('TCPDF, PDF, example, test, guide');
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 
 // set default monospaced font
-<<<<<<< HEAD
-$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
-// set margins
-$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-$pdf->SetHeaderMargin(0);
-$pdf->SetFooterMargin(0);
-=======
 $pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
 $pdf->setMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
 $pdf->setHeaderMargin(0);
 $pdf->setFooterMargin(0);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // remove default footer
 $pdf->setPrintFooter(false);
 
 // set auto page breaks
-<<<<<<< HEAD
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-=======
 $pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -123,11 +90,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // set font
-<<<<<<< HEAD
-$pdf->SetFont('times', '', 48);
-=======
 $pdf->setFont('times', '', 48);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // add a page
 $pdf->AddPage();
@@ -161,21 +124,12 @@ $bMargin = $pdf->getBreakMargin();
 // get current auto-page-break mode
 $auto_page_break = $pdf->getAutoPageBreak();
 // disable auto-page-break
-<<<<<<< HEAD
-$pdf->SetAutoPageBreak(false, 0);
-// set bacground image
-$img_file = K_PATH_IMAGES.'image_demo.jpg';
-$pdf->Image($img_file, 0, 0, 210, 297, '', '', '', false, 300, '', false, false, 0);
-// restore auto-page-break status
-$pdf->SetAutoPageBreak($auto_page_break, $bMargin);
-=======
 $pdf->setAutoPageBreak(false, 0);
 // set bacground image
 $img_file = K_PATH_IMAGES.'image_demo.jpg';
 $pdf->Image($img_file, null, 0, 210, 297, '', '', '', false, 300, 'C', false, false, 0);
 // restore auto-page-break status
 $pdf->setAutoPageBreak($auto_page_break, $bMargin);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 // set the starting point for the page content
 $pdf->setPageMark();
 

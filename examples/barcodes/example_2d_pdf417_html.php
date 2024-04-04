@@ -37,13 +37,10 @@
  * @package com.tecnick.tcpdf
  * @author Nicola Asuni
  * @version 1.0.009
-<<<<<<< HEAD
-=======
  * @group barcode
  * @group pdf417
  * @group html
  * @group comparable
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
  */
 
 // include 2D barcode class (search for installation path)

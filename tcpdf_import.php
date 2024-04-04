@@ -60,13 +60,8 @@ class TCPDF_IMPORT extends TCPDF {
 
 	/**
 	 * Import an existing PDF document
-<<<<<<< HEAD
-	 * @param $filename (string) Filename of the PDF document to import.
-	 * @return true in case of success, false otherwise
-=======
 	 * @param string $filename Filename of the PDF document to import.
 	 * @return void
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 	 * @public
 	 * @since 1.0.000 (2011-05-24)
 	 */

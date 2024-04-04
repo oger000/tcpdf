@@ -228,13 +228,10 @@ if (!defined('K_TCPDF_CALLS_IN_HTML')) {
 	define('K_TCPDF_CALLS_IN_HTML', false);
 }
 
-<<<<<<< HEAD
-=======
 if (!defined('K_ALLOWED_TCPDF_TAGS')) {
 	define('K_ALLOWED_TCPDF_TAGS', '');
 }
 
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 if (!defined('K_TCPDF_THROW_EXCEPTION_ERROR')) {
 	define('K_TCPDF_THROW_EXCEPTION_ERROR', false);
 }

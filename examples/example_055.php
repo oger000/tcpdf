@@ -22,12 +22,9 @@
  * @abstract TCPDF - Example: XHTML Forms
  * @author Nicola Asuni
  * @since 2009-10-21
-<<<<<<< HEAD
-=======
  * @group html
  * @group form
  * @group pdf
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
  */
 
 // Include the main TCPDF library (search for installation path).
@@ -37,16 +34,6 @@ require_once('tcpdf_include.php');
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
-<<<<<<< HEAD
-$pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('Nicola Asuni');
-$pdf->SetTitle('TCPDF Example 055');
-$pdf->SetSubject('TCPDF Tutorial');
-$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
-// set default header data
-$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 055', PDF_HEADER_STRING);
-=======
 $pdf->setCreator(PDF_CREATOR);
 $pdf->setAuthor('Nicola Asuni');
 $pdf->setTitle('TCPDF Example 055');
@@ -55,24 +42,12 @@ $pdf->setKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
 $pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 055', PDF_HEADER_STRING);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
-<<<<<<< HEAD
-$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
-// set margins
-$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
-
-// set auto page breaks
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-=======
 $pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
@@ -82,7 +57,6 @@ $pdf->setFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
 $pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -96,21 +70,13 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // set font
-<<<<<<< HEAD
-$pdf->SetFont('helvetica', '', 14);
-=======
 $pdf->setFont('helvetica', '', 14);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // array of font names
 $core_fonts = array('courier', 'courierB', 'courierI', 'courierBI', 'helvetica', 'helveticaB', 'helveticaI', 'helveticaBI', 'times', 'timesB', 'timesI', 'timesBI', 'symbol', 'zapfdingbats');
 
 // set fill color
-<<<<<<< HEAD
-$pdf->SetFillColor(221,238,255);
-=======
 $pdf->setFillColor(221,238,255);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // create one HTML table for each core font
 foreach($core_fonts as $font) {
@@ -120,21 +86,13 @@ foreach($core_fonts as $font) {
 	// Cell($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link='', $stretch=0, $ignore_min_height=false, $calign='T', $valign='M')
 
 	// set font for title
-<<<<<<< HEAD
-	$pdf->SetFont('helvetica', 'B', 16);
-=======
 	$pdf->setFont('helvetica', 'B', 16);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 	// print font name
 	$pdf->Cell(0, 10, 'FONT: '.$font, 1, 1, 'C', true, '', 0, false, 'T', 'M');
 
 	// set font for chars
-<<<<<<< HEAD
-	$pdf->SetFont($font, '', 16);
-=======
 	$pdf->setFont($font, '', 16);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 	// print each character
 	for ($i = 0; $i < 256; ++$i) {

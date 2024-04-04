@@ -22,11 +22,8 @@
  * @abstract TCPDF - Example: Document Encryption / Security
  * @author Nicola Asuni
  * @since 2008-03-04
-<<<<<<< HEAD
-=======
  * @group security
  * @group pdf
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
  */
 
 // Include the main TCPDF library (search for installation path).
@@ -67,34 +64,16 @@ $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8',
 
 */
 
-<<<<<<< HEAD
-$pdf->SetProtection(array('print', 'copy'), '', null, 0, null);
-
-// Example with public-key
-// To open the document you need to install the private key (tcpdf.p12) on the Acrobat Reader. The password is: 1234
-//$pdf->SetProtection($permissions=array('print', 'copy'), $user_pass='', $owner_pass=null, $mode=1, $pubkeys=array(array('c' => 'file://../config/cert/tcpdf.crt', 'p' => array('print'))));
-=======
 $pdf->setProtection(array('print', 'copy'), '', null, 0, null);
 
 // Example with public-key
 // To open the document you need to install the private key (tcpdf.p12) on the Acrobat Reader. The password is: 1234
 //$pdf->setProtection($permissions=array('print', 'copy'), $user_pass='', $owner_pass=null, $mode=1, $pubkeys=array(array('c' => 'file://../config/cert/tcpdf.crt', 'p' => array('print'))));
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // *********************************************************
 
 
 // set document information
-<<<<<<< HEAD
-$pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('Nicola Asuni');
-$pdf->SetTitle('TCPDF Example 016');
-$pdf->SetSubject('TCPDF Tutorial');
-$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
-// set default header data
-$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 016', PDF_HEADER_STRING);
-=======
 $pdf->setCreator(PDF_CREATOR);
 $pdf->setAuthor('Nicola Asuni');
 $pdf->setTitle('TCPDF Example 016');
@@ -103,24 +82,12 @@ $pdf->setKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
 $pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 016', PDF_HEADER_STRING);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array('helvetica', '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array('helvetica', '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
-<<<<<<< HEAD
-$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
-// set margins
-$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
-
-// set auto page breaks
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-=======
 $pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
@@ -130,7 +97,6 @@ $pdf->setFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
 $pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -144,11 +110,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // set font
-<<<<<<< HEAD
-$pdf->SetFont('times', '', 16);
-=======
 $pdf->setFont('times', '', 16);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // add a page
 $pdf->AddPage();

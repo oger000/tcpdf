@@ -22,11 +22,8 @@
  * @abstract TCPDF - Example: Cell vertical alignments
  * @author Nicola Asuni
  * @since 2008-03-04
-<<<<<<< HEAD
-=======
  * @group cell
  * @group pdf
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
  */
 
 // Include the main TCPDF library (search for installation path).
@@ -36,16 +33,6 @@ require_once('tcpdf_include.php');
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
-<<<<<<< HEAD
-$pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('Nicola Asuni');
-$pdf->SetTitle('TCPDF Example 057');
-$pdf->SetSubject('TCPDF Tutorial');
-$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
-// set default header data
-$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 057', PDF_HEADER_STRING);
-=======
 $pdf->setCreator(PDF_CREATOR);
 $pdf->setAuthor('Nicola Asuni');
 $pdf->setTitle('TCPDF Example 057');
@@ -54,24 +41,12 @@ $pdf->setKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
 $pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 057', PDF_HEADER_STRING);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
-<<<<<<< HEAD
-$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
-// set margins
-$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
-
-// set auto page breaks
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-=======
 $pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
@@ -81,7 +56,6 @@ $pdf->setFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
 $pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -95,30 +69,13 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // set font
-<<<<<<< HEAD
-$pdf->SetFont('helvetica', 'B', 20);
-=======
 $pdf->setFont('helvetica', 'B', 20);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // add a page
 $pdf->AddPage();
 
 $pdf->Write(0, 'Example of alignment options for Cell()', '', 0, 'L', true, 0, false, false, 0);
 
-<<<<<<< HEAD
-$pdf->SetFont('helvetica', '', 11);
-
-// set border width
-$pdf->SetLineWidth(0.7);
-
-// set color for cell border
-$pdf->SetDrawColor(0,128,255);
-
-$pdf->setCellHeightRatio(3);
-
-$pdf->SetXY(15, 60);
-=======
 $pdf->setFont('helvetica', '', 11);
 
 // set border width
@@ -130,7 +87,6 @@ $pdf->setDrawColor(0,128,255);
 $pdf->setCellHeightRatio(3);
 
 $pdf->setXY(15, 60);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // text on center
 $pdf->Cell(30, 0, 'Top-Center', 1, $ln=0, 'C', 0, '', 0, false, 'T', 'C');
@@ -141,11 +97,7 @@ $pdf->Cell(30, 0, 'Baseline-Center', 1, $ln=0, 'C', 0, '', 0, false, 'L', 'C');
 $pdf->Cell(30, 0, 'Descent-Center', 1, $ln=0, 'C', 0, '', 0, false, 'D', 'C');
 
 
-<<<<<<< HEAD
-$pdf->SetXY(15, 90);
-=======
 $pdf->setXY(15, 90);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // text on top
 $pdf->Cell(30, 0, 'Top-Top', 1, $ln=0, 'C', 0, '', 0, false, 'T', 'T');
@@ -156,11 +108,7 @@ $pdf->Cell(30, 0, 'Baseline-Top', 1, $ln=0, 'C', 0, '', 0, false, 'L', 'T');
 $pdf->Cell(30, 0, 'Descent-Top', 1, $ln=0, 'C', 0, '', 0, false, 'D', 'T');
 
 
-<<<<<<< HEAD
-$pdf->SetXY(15, 120);
-=======
 $pdf->setXY(15, 120);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // text on bottom
 $pdf->Cell(30, 0, 'Top-Bottom', 1, $ln=0, 'C', 0, '', 0, false, 'T', 'B');
@@ -204,11 +152,7 @@ TW: text width
 FA: font ascent
 FB: font baseline
 FD: font descent';
-<<<<<<< HEAD
-$pdf->SetFont('helvetica', '', 10);
-=======
 $pdf->setFont('helvetica', '', 10);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 $pdf->setCellHeightRatio(1.25);
 $pdf->MultiCell(0, 0, $legend, 0, 'L', false, 1, 125, 160, true, 0, false, true, 0, 'T', false);
 
@@ -219,22 +163,6 @@ $pdf->MultiCell(0, 0, $legend, 0, 'L', false, 1, 125, 160, true, 0, false, true,
 // add a page
 $pdf->AddPage();
 
-<<<<<<< HEAD
-$pdf->SetFont('helvetica', 'B', 20);
-
-$pdf->Write(0, 'Example of borders for Cell()', '', 0, 'L', true, 0, false, false, 0);
-
-$pdf->SetFont('helvetica', '', 11);
-
-// set border width
-$pdf->SetLineWidth(0.508);
-
-// set color for cell border
-$pdf->SetDrawColor(0,128,255);
-
-// set filling color
-$pdf->SetFillColor(255,255,128);
-=======
 $pdf->setFont('helvetica', 'B', 20);
 
 $pdf->Write(0, 'Example of borders for Cell()', '', 0, 'L', true, 0, false, false, 0);
@@ -249,7 +177,6 @@ $pdf->setDrawColor(0,128,255);
 
 // set filling color
 $pdf->setFillColor(255,255,128);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set cell height ratio
 $pdf->setCellHeightRatio(3);
@@ -293,22 +220,6 @@ $pdf->Cell(30, 0, 'B', 'B', 1, 'C', 1, '', 0, false, 'T', 'C');
 // add a page
 $pdf->AddPage();
 
-<<<<<<< HEAD
-$pdf->SetFont('helvetica', 'B', 20);
-
-$pdf->Write(0, 'Example of advanced border settings for Cell()', '', 0, 'L', true, 0, false, false, 0);
-
-$pdf->SetFont('helvetica', '', 11);
-
-// set border width
-$pdf->SetLineWidth(1);
-
-// set color for cell border
-$pdf->SetDrawColor(0,128,255);
-
-// set filling color
-$pdf->SetFillColor(255,255,128);
-=======
 $pdf->setFont('helvetica', 'B', 20);
 
 $pdf->Write(0, 'Example of advanced border settings for Cell()', '', 0, 'L', true, 0, false, false, 0);
@@ -323,7 +234,6 @@ $pdf->setDrawColor(0,128,255);
 
 // set filling color
 $pdf->setFillColor(255,255,128);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 $border = array('LTRB' => array('width' => 2, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(255, 0, 0)));
 $pdf->Cell(30, 0, 'LTRB', $border, 1, 'C', 1, '', 0, false, 'T', 'C');

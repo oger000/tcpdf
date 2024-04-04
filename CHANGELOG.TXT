@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 6.7.4 (2024-03-24)
 	- Upgrade tcpdf tag encryption algorithm.
 	- Fix regression issue #699.
@@ -190,7 +188,6 @@
 6.2.12 (2015-09-12)
 	- fix composer package name to tecnickcom/tcpdf
 
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 6.2.11 (2015-08-02)
 	- Bug #1070 "PNG regression in 6.2.9 (they appear as their alpha channel)" was fixed.
 	- Bug #1069 "Encoded SRC URLs in <img> tags don't work anymore" was fixed.

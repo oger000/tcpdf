@@ -22,11 +22,8 @@
  * @abstract TCPDF - Example: Move, copy and delete pages
  * @author Nicola Asuni
  * @since 2009-01-02
-<<<<<<< HEAD
-=======
  * @group page
  * @group pdf
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
  */
 
 // Include the main TCPDF library (search for installation path).
@@ -36,16 +33,6 @@ require_once('tcpdf_include.php');
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
-<<<<<<< HEAD
-$pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('Nicola Asuni');
-$pdf->SetTitle('TCPDF Example 044');
-$pdf->SetSubject('TCPDF Tutorial');
-$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
-// set default header data
-$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 044', PDF_HEADER_STRING);
-=======
 $pdf->setCreator(PDF_CREATOR);
 $pdf->setAuthor('Nicola Asuni');
 $pdf->setTitle('TCPDF Example 044');
@@ -54,24 +41,12 @@ $pdf->setKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
 $pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 044', PDF_HEADER_STRING);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
-<<<<<<< HEAD
-$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
-// set margins
-$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
-
-// set auto page breaks
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-=======
 $pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
@@ -81,7 +56,6 @@ $pdf->setFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
 $pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -95,11 +69,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // set font
-<<<<<<< HEAD
-$pdf->SetFont('helvetica', 'B', 40);
-=======
 $pdf->setFont('helvetica', 'B', 40);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 // print a line using Cell()
 $pdf->AddPage();
@@ -109,19 +79,11 @@ $pdf->Cell(0, 10, 'PAGE: A', 0, 1, 'L');
 $pdf->Ln(10);
 
 // print some text
-<<<<<<< HEAD
-$pdf->SetFont('times', 'I', 16);
-$txt = 'TCPDF allows you to Copy, Move and Delete pages.';
-$pdf->Write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
-
-$pdf->SetFont('helvetica', 'B', 40);
-=======
 $pdf->setFont('times', 'I', 16);
 $txt = 'TCPDF allows you to Copy, Move and Delete pages.';
 $pdf->Write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
 
 $pdf->setFont('helvetica', 'B', 40);
->>>>>>> d4adef47ca21c90e6483d59dcb9e5b1023696937
 
 $pdf->AddPage();
 $pdf->Cell(0, 10, 'PAGE: B', 0, 1, 'L');
